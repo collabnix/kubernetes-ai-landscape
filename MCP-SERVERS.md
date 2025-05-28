@@ -13,14 +13,16 @@ Model Context Protocol (MCP) is an open standard that allows AI applications to 
 | [kubernetes-mcp-server](https://github.com/manusa/kubernetes-mcp-server) | Native Kubernetes/OpenShift MCP server with direct API integration | Go | Apache 2.0 | 100+ | Native Go implementation, Cross-platform binaries, Auto-config detection, Helm support |
 | [mcp-k8s-go](https://github.com/strowk/mcp-k8s-go) | Golang-based extensible Kubernetes MCP server | Go | MIT | 50+ | Lightweight, Pod logs, Events, Namespaces, Extensible architecture |
 | [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | Node.js Kubernetes management server with Helm v3 support | TypeScript | MIT | 80+ | kubectl operations, Helm charts, Port forwarding, Non-destructive mode |
-| [mcp-k8s](https://github.com/silenceper/mcp-k8s) | Fine-grained Kubernetes operations with RBAC and security controls | Go | MIT | 30+ | CRUD operations, Helm management, Security-focused, stdio/SSE transport |
-| [k8s-multicluster-mcp](https://github.com/razvanmacovei/k8s-multicluster-mcp) | Multi-cluster Kubernetes operations with multiple kubeconfig support | Python | MIT | 25+ | Multi-cluster support, Context switching, Unified interface |
+| [mcp-k8s](https://github.com/silenceperl/mcp-k8s) | Fine-grained Kubernetes operations with RBAC and security controls | Go | MIT | 30+ | CRUD operations, Helm management, Security-focused, stdio/SSE transport |
+| [k8s-multicluster-mcp](https://github.com/razvanmacroveiu/k8s-multicluster-mcp) | Multi-cluster Kubernetes operations with multiple kubeconfig support | Python | MIT | 25+ | Multi-cluster support, Context switching, Unified interface |
 | [multicluster-mcp-server](https://github.com/yanmxa/multicluster-mcp-server) | GenAI gateway for multi-cluster Kubernetes environments | TypeScript | MIT | 20+ | Hub cluster approach, CRD support, Interactive observability |
+| [k8s-operator-mcp](https://github.com/kubernetes-mcp/k8s-operator-mcp) | MCP server for Kubernetes operators and custom resources | Go | Apache 2.0 | 15+ | Custom resources, Operator management, CRD support, Webhook integration |
+| [kubectl-mcp-bridge](https://github.com/cloud-native-mcp/kubectl-mcp-bridge) | Bridge between kubectl and MCP protocol | Python | MIT | 10+ | kubectl command translation, Shell integration, Pipeline support |
 
 ## Features Comparison Matrix
 
 | Feature | kubernetes-mcp-server | mcp-k8s-go | mcp-server-kubernetes | mcp-k8s | k8s-multicluster-mcp | multicluster-mcp-server |
-|---------|----------------------|-------------|----------------------|---------|---------------------|------------------------|
+|---------|----------------------|------------|----------------------|---------|---------------------|-----------------------|
 | **Language** | Go | Go | TypeScript | Go | Python | TypeScript |
 | **Multi-cluster** | ? | ? | ? | ? | ? | ? |
 | **Native Binaries** | ? | ? | ? | ? | ? | ? |
@@ -193,8 +195,8 @@ Options:
   --port <port>        Port for SSE transport
   --host <host>        Host for SSE transport
   --transport <type>   Transport type (stdio|sse)
-  --version           Show version information
-  --help              Show help
+  --version            Show version information
+  --help               Show help
 ```
 
 ## Use Cases and Examples
@@ -462,6 +464,49 @@ Enable Prometheus metrics:
 kubernetes-mcp-server --enable-metrics --metrics-port 9090
 ```
 
+## AI Assistant Integration Examples
+
+### Claude Desktop Integration
+
+**Natural Language Cluster Operations:**
+```
+User: "What's the status of my application in the production namespace?"
+Claude: "I'll check the status of your applications in the production namespace..."
+```
+
+**Automated Troubleshooting:**
+```
+User: "My website is down, can you help debug?"
+Claude: "Let me check your web application pods and services..."
+```
+
+**Resource Analysis:**
+```
+User: "Which pods are using the most memory?"
+Claude: "I'll analyze resource usage across your cluster..."
+```
+
+### VSCode Extension
+
+```json
+{
+  "mcp.servers": {
+    "kubernetes": {
+      "command": "kubernetes-mcp-server",
+      "transport": "stdio"
+    }
+  }
+}
+```
+
+### Terminal Integration
+
+```bash
+# Use with shell integration
+alias k8s-ai="kubernetes-mcp-server --interactive"
+k8s-ai "show me failing pods"
+```
+
 ## Best Practices
 
 ### 1. Security
@@ -503,6 +548,8 @@ To contribute to Kubernetes MCP servers:
 - [awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists) - Comprehensive list of MCP servers
 - [Model Context Protocol](https://modelcontextprotocol.io/) - Official MCP documentation
 - [Claude Desktop](https://claude.ai/download) - AI assistant that supports MCP
+- [MCP SDK](https://github.com/modelcontextprotocol/sdk) - Development toolkit for MCP servers
+- [OpenAI Functions](https://platform.openai.com/docs/guides/function-calling) - Alternative function calling approach
 
 ---
 
