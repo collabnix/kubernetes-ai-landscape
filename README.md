@@ -1,4 +1,4 @@
-# Kubernetes AI Landscape ??
+# Kubernetes AI Landscape 
 
 A comprehensive collection of AI/ML tools, frameworks, and resources in the Kubernetes ecosystem for building, deploying, and managing machine learning workloads at scale.
 
@@ -7,7 +7,7 @@ A comprehensive collection of AI/ML tools, frameworks, and resources in the Kube
 [![GitHub issues](https://img.shields.io/github/issues/collabnix/kubernetes-ai-landscape.svg)](https://github.com/collabnix/kubernetes-ai-landscape/issues)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## ? Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [MLOps Platforms](#mlops-platforms)
